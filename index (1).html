@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="id"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Find Me</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Styling untuk mata/gambar */
+        .eye-container {
+            width: 280px;
+            height: 150px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Menggunakan SVG untuk membentuk mata bergaya 'creepy/grainy' jika tidak ada file gambar lokal */
+        .eye-graphic {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+        }
+
+        /* Styling teks merah bertautan */
+        .maps-link {
+            color: #ff3333;
+            font-size: 2.5rem;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+            display: inline-block;
+            margin-top: -10px;
+        }
+
+        .maps-link:hover {
+            color: #ff6666;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.9);
+            transform: scale(1.05);
+        }
+
+        /* Responsif untuk layar HP */
+        @media (max-width: 480px) {
+            .eye-container {
+                width: 220px;
+            }
+            .maps-link {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Ilustrasi/Mata -->
+        <div class="eye-container">
+            <!-- Jika Anda memiliki file gambar aslinya, ganti elemen <svg> ini dengan: 
+                 <img src="1000126247.jpg" alt="Eye" style="width:100%;"> -->
+            <svg class="eye-graphic" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <radialGradient id="pupilGrad" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#050505"></stop>
+                        <stop offset="70%" stop-color="#151515"></stop>
+                        <stop offset="100%" stop-color="#000000"></stop>
+                    </radialGradient>
+                    <radialGradient id="scleraGrad" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#a0a0a0"></stop>
+                        <stop offset="50%" stop-color="#505050"></stop>
+                        <stop offset="100%" stop-color="#000000"></stop>
+                    </radialGradient>
+                </defs>
+                <!-- Bentuk Luar Mata -->
+                <path d="M 10 80 Q 150 -10 290 80 Q 150 170 10 80 Z" fill="url(#scleraGrad)" opacity="0.85"></path>
+                <!-- Pupil / Iris -->
+                <circle cx="150" cy="80" r="55" fill="url(#pupilGrad)"></circle>
+                <!-- Kilatan Cahaya di Mata -->
+                <circle cx="130" cy="68" r="3" fill="#ffffff" opacity="0.9"></circle>
+                <circle cx="140" cy="68" r="2" fill="#ffffff" opacity="0.9"></circle>
+                <circle cx="170" cy="68" r="2.5" fill="#ffffff" opacity="0.8"></circle>
+            </svg>
+        </div>
+
+        <!-- Tautan ke Google Maps -->
+        <a href="https://maps.app.goo.gl/S2VNTe6k88WDTMYq5?g_st=ac" target="_blank" rel="noopener noreferrer" class="maps-link">
+            you find me
+        </a>
+    </div>
+
+
+
+</body></html>
